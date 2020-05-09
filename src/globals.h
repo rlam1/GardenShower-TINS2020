@@ -2,8 +2,11 @@
 
 constexpr double FPS{ 60.0 };
 
-constexpr int SCREEN_H{ 400 };
-constexpr int SCREEN_W{ 224 };
+static int SCREEN_W{ 1280 };
+static int SCREEN_H{ 720 };
+
+constexpr int GAME_W{ 400 };
+constexpr int GAME_H{ 224 };
 /* Remember to limmit content to within 4px top-bottom
    and 8px within left-right.
 

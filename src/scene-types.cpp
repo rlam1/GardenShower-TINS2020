@@ -11,8 +11,8 @@ TitleScreen::TitleScreen()
 	type = SCENE_TYPE::TITLE_SCREEN;
 
 	font = al_create_builtin_font();
-	x = SCREEN_H - H_OVERSCAN;
-	y = SCREEN_W - V_OVERSCAN - 15.0f;
+	x = GAME_W - H_OVERSCAN;
+	y = GAME_H - V_OVERSCAN - 15.0f;
 }
 
 TitleScreen::~TitleScreen()
@@ -22,10 +22,13 @@ TitleScreen::~TitleScreen()
 
 bool TitleScreen::Update()
 {
-	x -= 3.0f;
+	const char* text = "HELLO WORLD!";
+	int text_width = al_get_text_width(font, text);
 
-	if (x <= -15.5f) {
-		x = SCREEN_W;
+	x -= 1.5f;
+
+	if (x <= -text_width) {
+		x = GAME_W + text_width;
 	}
 
 	return false;
@@ -33,6 +36,7 @@ bool TitleScreen::Update()
 
 void TitleScreen::Draw()
 {
+	const char* text = "HELLO WORLD!";
 	al_draw_text(font, al_map_rgb(0, 255, 0), x, y, NULL, "HELLO WORLD!");
 }
 

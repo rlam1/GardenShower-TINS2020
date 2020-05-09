@@ -69,7 +69,7 @@ void startSystems()
 {
 	must_init(al_init(), "ALLEGRO 5 FAILED TO INITIALIZE!");
 
-	display = (ALLEGRO_DISPLAY*)must_exist(al_create_display(SCREEN_H, SCREEN_W), "FATAL ERROR: display ");
+	display = (ALLEGRO_DISPLAY*)must_exist(al_create_display(SCREEN_W, SCREEN_H), "FATAL ERROR: display ");
 	queue = (ALLEGRO_EVENT_QUEUE*)must_exist(al_create_event_queue(), "FATAL ERROR: queue ");
 	timer = (ALLEGRO_TIMER*)must_exist(al_create_timer(1.0 / FPS), "FATAL ERROR: timer ");
 
