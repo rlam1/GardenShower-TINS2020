@@ -1,0 +1,24 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+
+	"settings" :
+	{
+		"project_environment":
+		{
+			"env": 
+			{
+				"Windows": 
+				{
+					"PATH": "F:\\msys64\\mingw64\\bin;F:\\msys64\\usr\\bin;%PATH%",
+					"MSYSTEM": "MINGW64",
+					"CHERE_INVOKING": "enabled_from_arguments"
+    			}
+  			}
+		}
+	}
+}
