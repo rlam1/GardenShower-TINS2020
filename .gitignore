@@ -399,3 +399,6 @@ _deps
 .ninja_deps
 .ninja_log
 out
+
+# Sublime Text 3 stuff
+allegro.sublime-workspace
