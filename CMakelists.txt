@@ -22,7 +22,8 @@ find_package(Allegro5 REQUIRED COMPONENTS acodec audio color image primitives)
 
 # Game source files
 set(SOURCES
-	"src/main.cpp")
+	"src/main.cpp"
+	"src/scene.cpp")
 
 add_executable(game ${SOURCES})
 
