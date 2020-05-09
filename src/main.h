@@ -1,4 +1,11 @@
 #pragma once
+#include <iostream>
+#include <string>
+
+#include "allegro5/allegro.h"
+#include "allegro5/allegro_color.h"
+#include "allegro5/allegro_image.h"
+#include "allegro5/allegro_primitives.h"
 
 constexpr int MAX_FRAME_SKIPS{ 3 };
 constexpr double FPS{ 60.0 };
