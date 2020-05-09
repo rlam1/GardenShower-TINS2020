@@ -8,6 +8,8 @@ int main(int argc, char const **argv)
 
 	int frames_skipped{ 0 };
 
+	Scene director(SCENE_TYPE::TITLE_SCREEN);
+
 	bool running { true };
 	bool draw { false };
 	while(running){
@@ -24,10 +26,9 @@ int main(int argc, char const **argv)
 				running = false;
 				break;
 			case ALLEGRO_EVENT_TIMER:
-				if (frames_skipped++ <= MAX_FRAME_SKIPS) // DOWBLECHECK THIS!
-				{
-					draw = true;
-				}
+				director.Update();
+
+				draw = true;
 				break;
 		}
 
@@ -36,6 +37,9 @@ int main(int argc, char const **argv)
 
 			ALLEGRO_COLOR color = al_map_rgb_f(1.0f, 0.0f, 1.0f);
 			al_clear_to_color(color);
+
+			director.Draw();
+
 			al_flip_display();
 		}
 

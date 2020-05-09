@@ -1,25 +1,27 @@
 #pragma once
 
-enum class SCENE_TYPE
-{
-	title_screen,
-	scroller_intro,
-	garden_a,
-	garden_b,
-	gameover
-};
+#include <vector>
+
+#include <allegro5/allegro.h>
+#include <allegro5/allegro_font.h>
+
+#include "scene-types.h"
 
 class Scene
 {
 public:
 	Scene(SCENE_TYPE type);
-	~Scene() = default;
+	~Scene();
 
 	void Update();
 	void Draw();
 
 private:
 	SCENE_TYPE current_scene;
+
+	TitleScreen title_Screen;
+
+	ALLEGRO_FONT* font;
 
 	void update_title_screen();
 	void update_scroller_intro();
@@ -30,6 +32,4 @@ private:
 	void draw_scroller_intro();
 	void draw_garden();
 	void draw_gameover();
-
-
 };

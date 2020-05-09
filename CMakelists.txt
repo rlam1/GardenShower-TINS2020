@@ -18,12 +18,14 @@ if(MSVC AND NOT VCPKG_TOOLCHAIN)
 endif() 
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
-find_package(Allegro5 REQUIRED COMPONENTS acodec audio color image primitives)
+find_package(Allegro5 REQUIRED COMPONENTS acodec audio color font image primitives)
 
 # Game source files
 set(SOURCES
 	"src/main.cpp"
-	"src/scene.cpp")
+	"src/scene.cpp"
+	"src/input.cpp"
+	"src/scene-types.cpp")
 
 add_executable(game ${SOURCES})
 
@@ -31,5 +33,6 @@ target_link_libraries(game PRIVATE Allegro5::Allegro5
 	Allegro5::acodec
 	Allegro5::audio
 	Allegro5::color
+	Allegro5::font
 	Allegro5::image
 	Allegro5::primitives)
