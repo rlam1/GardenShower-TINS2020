@@ -24,7 +24,6 @@ private:
 	ALLEGRO_FONT* font;
 	ALLEGRO_BITMAP* gameScreen;
 
-	void update_title_screen();
 	void update_scroller_intro();
 	void update_garden();
 	void update_gameover();

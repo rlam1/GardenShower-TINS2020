@@ -1,3 +1,5 @@
+#include <cmath>
+
 #include <allegro5/allegro.h>
 
 #include "globals.h"
@@ -75,11 +77,28 @@ void Scene::Draw()
     }
 
     al_set_target_backbuffer(al_get_current_display());
-    al_draw_scaled_bitmap(gameScreen, 8.0f, 4.0f, GAME_W - 8.0F, GAME_H - 4.0F, 0.0F, 0.0F, SCREEN_W, SCREEN_H, NULL);
-}
 
-void Scene::update_title_screen()
-{
+    double game_ratio = (double)GAME_W / (double)GAME_H;
+    double screen_ratio = (double)SCREEN_W / (double)SCREEN_H;
+
+    if (screen_ratio > game_ratio) { // Space to the left and right
+        double new_screen_x = std::round((double)SCREEN_H / (double)GAME_H);
+        double new_screen_w = std::round(((double)SCREEN_H / 2.0) - (((double)GAME_W / 2.0)));
+
+        al_draw_scaled_bitmap(gameScreen,
+            H_OVERSCAN, V_OVERSCAN, GAME_W - H_OVERSCAN, GAME_H - V_OVERSCAN,
+            new_screen_x, 0.0F, new_screen_w, SCREEN_H,
+            NULL);
+    }
+    else { // Space top and bottom
+        double new_screen_y = std::round((double)SCREEN_W / (double)GAME_W);
+        double new_screen_h = std::round(((double)SCREEN_H / 2.0) - (((double)GAME_H / 2.0)));
+
+        al_draw_scaled_bitmap(gameScreen,
+            H_OVERSCAN, V_OVERSCAN, GAME_W - H_OVERSCAN, GAME_H - V_OVERSCAN,
+            0.0f, new_screen_y, SCREEN_W, new_screen_h * new_screen_y,
+            NULL);
+    }
 }
 
 void Scene::update_scroller_intro()
