@@ -24,7 +24,10 @@ void Scene::Update()
 	switch (current_scene)
 	{
     case SCENE_TYPE::TITLE_SCREEN:
-        title_Screen.Update();
+        if (title_Screen.Update()) {
+            current_scene = title_Screen.GetNextScene();
+            title_Screen.ResetScene();
+        }
         break;
     case SCENE_TYPE::SCROLLER_INTRO:
         update_scroller_intro();

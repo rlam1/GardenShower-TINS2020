@@ -27,6 +27,7 @@ public:
 
 	virtual SCENE_TYPE GetNextScene() = 0;
 	virtual SCENE_TYPE GetCurrentScene() = 0;
+	virtual void ResetScene() = 0;
 
 protected:
 	SCENE_TYPE type;
@@ -46,6 +47,7 @@ public:
 
 	SCENE_TYPE GetNextScene() override;
 	SCENE_TYPE GetCurrentScene() override;
+	void ResetScene() override;
 
 private:
 	ALLEGRO_FONT* font;

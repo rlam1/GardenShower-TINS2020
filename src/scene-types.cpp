@@ -12,7 +12,7 @@ TitleScreen::TitleScreen()
 
 	font = al_create_builtin_font();
 	x = GAME_W - H_OVERSCAN;
-	y = GAME_H - V_OVERSCAN - 15.0f;
+	y = GAME_H - V_OVERSCAN - al_get_font_line_height(font);
 }
 
 TitleScreen::~TitleScreen()
@@ -48,4 +48,8 @@ SCENE_TYPE TitleScreen::GetNextScene()
 SCENE_TYPE TitleScreen::GetCurrentScene()
 {
 	return type;
+}
+
+void TitleScreen::ResetScene()
+{
 }
