@@ -25,7 +25,7 @@ bool TitleScreen::Update()
 	const char* text = "HELLO WORLD!";
 	int text_width = al_get_text_width(font, text);
 
-	x -= 1.5f;
+	x -= 1.0f;
 
 	if (x <= -text_width) {
 		x = GAME_W + text_width;

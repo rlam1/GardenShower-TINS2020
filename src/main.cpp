@@ -1,5 +1,8 @@
 #include "main.h"
 
+int SCREEN_W{ 1280 };
+int SCREEN_H{ 720 };
+
 int main(int argc, char const **argv)
 {
 	startSystems();
@@ -69,6 +72,16 @@ void startSystems()
 {
 	must_init(al_init(), "ALLEGRO 5 FAILED TO INITIALIZE!");
 
+	auto d = al_create_display(300, 300);
+	al_clear_to_color(al_map_rgb(0, 0, 0));
+	al_flip_display();
+	al_rest(0.5);
+	al_destroy_display(d);
+
+	//al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+	al_set_new_display_option(ALLEGRO_SAMPLE_BUFFERS, 1, ALLEGRO_SUGGEST);
+	al_set_new_display_option(ALLEGRO_SAMPLES, 4, ALLEGRO_SUGGEST);
+
 	display = (ALLEGRO_DISPLAY*)must_exist(al_create_display(SCREEN_W, SCREEN_H), "FATAL ERROR: display ");
 	queue = (ALLEGRO_EVENT_QUEUE*)must_exist(al_create_event_queue(), "FATAL ERROR: queue ");
 	timer = (ALLEGRO_TIMER*)must_exist(al_create_timer(1.0 / FPS), "FATAL ERROR: timer ");
@@ -80,4 +93,7 @@ void startSystems()
 	al_register_event_source(queue, al_get_display_event_source(display));
 	al_register_event_source(queue, al_get_keyboard_event_source());
 	al_register_event_source(queue, al_get_timer_event_source(timer));
+
+	SCREEN_W = al_get_display_width(display);
+	SCREEN_H = al_get_display_height(display);
 }

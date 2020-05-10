@@ -2,8 +2,8 @@
 
 constexpr double FPS{ 60.0 };
 
-static int SCREEN_W{ 1280 };
-static int SCREEN_H{ 720 };
+extern int SCREEN_W;
+extern int SCREEN_H;
 
 constexpr int GAME_W{ 400 };
 constexpr int GAME_H{ 224 };
