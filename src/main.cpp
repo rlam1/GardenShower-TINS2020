@@ -24,8 +24,13 @@ int main(int argc, char const **argv)
 				if(ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE){
 					running = false;
 				}
+
+				director.input.setKey(ev.keyboard.keycode);
+
 				break;
 			case ALLEGRO_EVENT_KEY_UP:
+				director.input.unsetKey(ev.keyboard.keycode);
+
 				break;
 			case ALLEGRO_EVENT_DISPLAY_CLOSE:
 				running = false;

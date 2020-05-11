@@ -19,7 +19,7 @@ void InputState::unsetKey(int keycode)
 	keyboard_state.at(keycode) = false;
 }
 
-bool InputState::isKeyActive(int keycode)
+const bool InputState::isKeyActive(int keycode) const
 {
 	return keyboard_state.at(keycode);
 }

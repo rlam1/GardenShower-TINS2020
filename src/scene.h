@@ -17,6 +17,8 @@ public:
 	void Update();
 	void Draw();
 
+	InputState input;
+
 private:
 	SCENE_TYPE current_scene;
 

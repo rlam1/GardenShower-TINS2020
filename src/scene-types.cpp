@@ -21,9 +21,10 @@ TitleScreen::TitleScreen()
 TitleScreen::~TitleScreen()
 {
 	al_destroy_font(font);
+	al_destroy_bitmap(bg);
 }
 
-bool TitleScreen::Update()
+bool TitleScreen::Update(const InputState& state)
 {
 	const char* text = "HELLO WORLD!";
 	int text_width = al_get_text_width(font, text);
@@ -32,6 +33,10 @@ bool TitleScreen::Update()
 
 	if (x <= -text_width) {
 		x = GAME_W + text_width;
+	}
+
+	if (state.isKeyActive(ALLEGRO_KEY_ENTER)) {
+		return true;
 	}
 
 	return false;

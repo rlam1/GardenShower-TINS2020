@@ -26,7 +26,7 @@ void Scene::Update()
 	switch (current_scene)
 	{
     case SCENE_TYPE::TITLE_SCREEN:
-        if (title_Screen.Update()) {
+        if (title_Screen.Update(input)) {
             current_scene = title_Screen.GetNextScene();
             title_Screen.ResetScene();
         }
