@@ -25,6 +25,8 @@ int main(int argc, char const **argv)
 					running = false;
 				}
 				break;
+			case ALLEGRO_EVENT_KEY_UP:
+				break;
 			case ALLEGRO_EVENT_DISPLAY_CLOSE:
 				running = false;
 				break;
