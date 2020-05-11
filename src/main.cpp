@@ -72,11 +72,9 @@ void startSystems()
 {
 	must_init(al_init(), "ALLEGRO 5 FAILED TO INITIALIZE!");
 
-	auto d = al_create_display(300, 300);
-	al_clear_to_color(al_map_rgb(0, 0, 0));
-	al_flip_display();
-	al_rest(0.5);
-	al_destroy_display(d);
+#ifdef WIN32
+	al_set_new_display_flags(ALLEGRO_OPENGL_3_0);
+#endif // WIN32
 
 	//al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
 	al_set_new_display_option(ALLEGRO_SAMPLE_BUFFERS, 1, ALLEGRO_SUGGEST);
