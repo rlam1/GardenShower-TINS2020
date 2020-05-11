@@ -21,6 +21,7 @@ bool Scene::Update()
 {
     bool keepRunning{ true };
 
+    // Whenever the Update() methods return true, a scene change is triggered.
 	switch (current_scene)
 	{
     case SCENE_TYPE::TITLE_SCREEN:

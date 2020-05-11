@@ -24,6 +24,7 @@ private:
 	SCENE_TYPE current_scene;
 
 	TitleScreen title_Screen;
+	GardenA garden;
 
 	ALLEGRO_BITMAP* gameScreen;
 };
