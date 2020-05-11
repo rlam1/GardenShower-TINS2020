@@ -29,7 +29,9 @@ set(SOURCES
 	"src/BaseScene.cpp"
 	"src/TitleScreen.cpp"
 	"src/GardenA.cpp"
-	"src/PauseScreen.cpp")
+	"src/PauseScreen.cpp"
+	"src/player.cpp"
+	"src/rect.cpp")
 
 add_executable(game ${SOURCES})
 
