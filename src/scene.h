@@ -14,8 +14,9 @@ public:
 	Scene(SCENE_TYPE type);
 	~Scene();
 
-	void Update();
+	bool Update();
 	void Draw();
+
 
 	InputState input;
 

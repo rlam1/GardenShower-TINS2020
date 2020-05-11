@@ -21,8 +21,10 @@ Scene::~Scene()
     al_destroy_bitmap(gameScreen);
 }
 
-void Scene::Update()
+bool Scene::Update()
 {
+    bool keepRunning{ true };
+
 	switch (current_scene)
 	{
     case SCENE_TYPE::TITLE_SCREEN:
@@ -39,10 +41,15 @@ void Scene::Update()
         break;
     case SCENE_TYPE::GAMEOVER:
         break;
+    case SCENE_TYPE::PAUSE_SCREEN:
+        // Handle special keepRunning variable to signal program exit. Catch the ESCAPE key here.
+        break;
     default:
         // DRAW on top of everything an error maybe?
         break;
 	}
+
+    return keepRunning;
 }
 
 void Scene::Draw()

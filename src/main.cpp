@@ -22,7 +22,9 @@ int main(int argc, char const **argv)
 		switch(ev.type){
 			case ALLEGRO_EVENT_KEY_DOWN:
 				if(ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE){
+					// Note: IN THE FUTURE THIS WILL BE HANDLED by the Scene class {director}.
 					running = false;
+					// Note: IN THE FUTURE THIS WILL BE HANDLED by the Scene class {director}.
 				}
 
 				director.input.setKey(ev.keyboard.keycode);
@@ -36,7 +38,7 @@ int main(int argc, char const **argv)
 				running = false;
 				break;
 			case ALLEGRO_EVENT_TIMER:
-				director.Update();
+				running = director.Update();
 
 				draw = true;
 				break;
