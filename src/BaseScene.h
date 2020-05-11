@@ -32,5 +32,6 @@ protected:
 	SCENE_TYPE type;
 
 	std::vector<const char*> image_resources;
+	std::vector<const char*> font_resources;
 	std::vector<const char*> audio_resources;
 };
