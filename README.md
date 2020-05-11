@@ -8,7 +8,7 @@ For a Windows build, you need to have:
 1. A copy of [vcpkg](https://github.com/Microsoft/vcpkg) installed on your x64 VS DevEv.
 2. The allegro5 package compiled from your x64 VS DevEnv.
 3. `VCPKG_ROOT` environment variable defined in your system.
-4. After compilation, copy the following DLLs from the `${VCPKG_ROOT}\installed\x64-windows\bin directory`${VCPKG_ROOT}\installed\x64-windows\bin directory:
+4. After compilation, copy the following DLLs from the `${VCPKG_ROOT}\installed\x64-windows\bin` directory:
 	* zlib1.dll
 	* libpng16.dll
 	* freetype.dll
