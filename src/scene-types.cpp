@@ -13,6 +13,9 @@ TitleScreen::TitleScreen()
 	font = al_create_builtin_font();
 	x = GAME_W - H_OVERSCAN;
 	y = GAME_H - V_OVERSCAN - al_get_font_line_height(font);
+
+	bg = al_load_bitmap("data/title_card.png");
+	assert(nullptr != bg);
 }
 
 TitleScreen::~TitleScreen()
@@ -36,8 +39,10 @@ bool TitleScreen::Update()
 
 void TitleScreen::Draw()
 {
-	const char* text = "HELLO WORLD!";
-	al_draw_text(font, al_map_rgb(0, 255, 0), x, y, NULL, "HELLO WORLD!");
+	al_draw_bitmap(bg, 0, 0, NULL);
+
+	const char* text = "PRESS ENTER!!";
+	al_draw_text(font, al_map_rgb(230, 69, 57), x, y, NULL, "PRESS ENTER!");
 }
 
 SCENE_TYPE TitleScreen::GetNextScene()

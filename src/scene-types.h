@@ -50,6 +50,7 @@ public:
 	void ResetScene() override;
 
 private:
+	ALLEGRO_BITMAP* bg;
 	ALLEGRO_FONT* font;
 	float x, y;
 };
