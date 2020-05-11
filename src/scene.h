@@ -25,6 +25,5 @@ private:
 
 	TitleScreen title_Screen;
 
-	ALLEGRO_FONT* font;
 	ALLEGRO_BITMAP* gameScreen;
 };

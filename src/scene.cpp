@@ -9,15 +9,11 @@ Scene::Scene(SCENE_TYPE type)
 {
 	current_scene = type;
 
-    font = al_create_builtin_font();
-
     gameScreen = al_create_bitmap(GAME_W, GAME_H);
 }
 
 Scene::~Scene()
 {
-    al_destroy_font(font);
-
     al_destroy_bitmap(gameScreen);
 }
 

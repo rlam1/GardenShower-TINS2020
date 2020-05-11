@@ -47,7 +47,7 @@ void TitleScreen::Draw()
 
 SCENE_TYPE TitleScreen::GetNextScene()
 {
-	return SCENE_TYPE::SCROLLER_INTRO;
+	return SCENE_TYPE::GARDEN_A;
 }
 
 SCENE_TYPE TitleScreen::GetCurrentScene()

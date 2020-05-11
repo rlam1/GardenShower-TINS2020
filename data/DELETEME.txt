@@ -1,3 +1,0 @@
-All data resources for the game will go here.
-
-File added to force git to add an empty directory to the tree.
