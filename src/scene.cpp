@@ -32,16 +32,12 @@ void Scene::Update()
         }
         break;
     case SCENE_TYPE::SCROLLER_INTRO:
-        update_scroller_intro();
         break;
     case SCENE_TYPE::GARDEN_A:
-        update_garden();
         break;
     case SCENE_TYPE::GARDEN_B:
-        update_garden();
         break;
     case SCENE_TYPE::GAMEOVER:
-        update_gameover();
         break;
     default:
         // DRAW on top of everything an error maybe?
@@ -61,20 +57,18 @@ void Scene::Draw()
         title_Screen.Draw();
         break;
     case SCENE_TYPE::SCROLLER_INTRO:
-        draw_scroller_intro();
         break;
     case SCENE_TYPE::GARDEN_A:
-        draw_garden();
         break;
     case SCENE_TYPE::GARDEN_B:
-        draw_garden();
         break;
     case SCENE_TYPE::GAMEOVER:
-        draw_gameover();
         break;
     default:
         break;
     }
+
+    // Add any additional drawing calls here!
 
     al_set_target_backbuffer(al_get_current_display());
 
@@ -91,33 +85,4 @@ void Scene::Draw()
         H_OVERSCAN, V_OVERSCAN, GAME_W - H_OVERSCAN, GAME_H - V_OVERSCAN,
         scaleX, scaleY, scaleW, scaleH,
         NULL);
-}
-
-void Scene::update_scroller_intro()
-{
-}
-
-void Scene::update_garden()
-{
-}
-
-void Scene::update_gameover()
-{
-}
-
-void Scene::draw_title_screen()
-{
-    
-}
-
-void Scene::draw_scroller_intro()
-{
-}
-
-void Scene::draw_garden()
-{
-}
-
-void Scene::draw_gameover()
-{
 }
