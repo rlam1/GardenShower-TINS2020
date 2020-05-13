@@ -46,13 +46,13 @@ void GardenA::setupFilepaths()
 
 void GardenA::loadResources()
 {
-	for each (const char* file in image_resources)
+	for (const char* file : image_resources)
 	{
 		sprites.push_back(al_load_bitmap(file));
 	}
 
 	int fontsize{ 12 };
-	for each (const char* file in font_resources)
+	for (const char* file : font_resources)
 	{
 		fonts.push_back(al_load_font(file, fontsize, NULL));
 
