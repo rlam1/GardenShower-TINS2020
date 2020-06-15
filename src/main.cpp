@@ -1,4 +1,4 @@
-#include "main.h"
+#include "include/main.h"
 
 int SCREEN_W{ 1280 };
 int SCREEN_H{ 720 };

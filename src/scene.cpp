@@ -2,8 +2,8 @@
 
 #include <allegro5/allegro.h>
 
-#include "globals.h"
-#include "scene.h"
+#include "include/globals.h"
+#include "include/scene.h"
 
 Scene::Scene(SCENE_TYPE type)
 {
