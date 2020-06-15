@@ -8,6 +8,13 @@ GardenA::GardenA()
 
 GardenA::~GardenA()
 {
+	for (auto& sprite : sprites) {
+		al_destroy_bitmap(sprite);
+	}
+
+	for (auto& font : fonts) {
+		al_destroy_font(font);
+	}
 }
 
 bool GardenA::Update(const InputState& state)
@@ -51,11 +58,12 @@ void GardenA::loadResources()
 		sprites.push_back(al_load_bitmap(file));
 	}
 
-	int fontsize{ 12 };
+	int fontsize{ 12 }; // TODO: Analyze font increase code below. This could be const.
 	for (const char* file : font_resources)
 	{
 		fonts.push_back(al_load_font(file, fontsize, NULL));
 
+		// TODO: Um, why I was increasing font size like this every new font?
 		fontsize += 12;
 	}
 }
